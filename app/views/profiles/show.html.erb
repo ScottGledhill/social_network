@@ -1,9 +1,14 @@
 <%= link_to 'Home', root_path%>
-<h1><%= "#{@user.username}" %></h1>
+<div class='title'>
+  <h1><%= "#{@user.username}" %></h1>
+</div>
 <% unless @current_user == @user %>
   <%= link_to 'Follow', followees_path(followee_id: @user.id), method: :post unless @following %>
   <%= link_to 'Unfollow', followee_path(@user.id), method: :delete if @following %>
 <% end %>
+<div id='tweets'>
 <% @user.tweets.reverse.each do |tweet| %>
   <div><%= tweet.message%> <%= tweet.created_at %></div>
+  <br>
+</div>
 <% end %>

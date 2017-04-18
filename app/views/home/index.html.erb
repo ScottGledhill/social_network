@@ -2,17 +2,18 @@
 <h1>Social Network</h1>
 </div>
 
-<div class='my-profile-link'>
-  <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
-  <%= link_to 'View My Profile', profile_path(@user.id) %>
-</div>
-
 <div class='new_user'>
   <% if @user %>
   <%= 'Welcome' %> <div id='name'> <%= "#{@user.username}" %>
   </div>
 </div>
 <br>
+
+<div class='my-profile-link'>
+  <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+  <%= link_to 'View My Profile', profile_path(@user.id) %>
+</div>
+
 
 
   <div class='messagebox'>
