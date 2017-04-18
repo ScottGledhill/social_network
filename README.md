@@ -1,5 +1,5 @@
 
-Welcome to the social network app!<br>
+Welcome to the Social Network app!<br>
 =================
 <br>
 
