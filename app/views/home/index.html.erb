@@ -4,11 +4,10 @@
   <%= "Welcome #{@user.username}" %>
   <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
   <%= link_to 'View My Profile', profile_path(@user.id) %>
+<br><br>
 
-
-  <h1>TWEET</h1>
   <%= form_for @user.tweets.new do |f| %>
-    <%= f.label :message %>
+    <%= f.label :Send_Message %>
     <%= f.text_field :message %>
     <%= f.submit %>
   <% end %>
