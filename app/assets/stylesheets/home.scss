@@ -1,3 +1,51 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+html, body {
+    height: 100%;
+    background-color: white;
+}
+
+body {
+    font:14px;
+    font-family: Big Caslon;
+    color: #222;
+    text-align:center;
+    padding:35px; }
+
+.my-profile-link {
+  position: absolute;
+   top: 0;
+   right: 0;
+   margin: 52px;
+ }
+
+.title {
+  font-size: 32px;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  position: relative;
+  color: pink
+}
+
+.new_user {
+  color: pink;
+  font-size: 22px;
+  margin: auto;
+  width: 90%;
+}
+
+.messagebox {
+  top: 10;
+  font-size: 22px;
+  float:right;
+}
+
+.timeline {
+
+}
+
+#name {
+  color :blue
+}
