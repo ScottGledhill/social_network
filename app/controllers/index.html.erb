@@ -1,16 +1,9 @@
-<h1>Social Network</h1>
+<h1>HOMEEEEE</h1>
 
 <% if @user %>
   <%= "Welcome #{@user.username}" %>
   <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
   <%= link_to 'View My Profile', profile_path(@user.id) %>
-<br><br>
-
-<%= form_for @user.tweets.new do |f| %>
-<%= f.label :Send_Message %>
-<%= f.text_field :message %>
-<%= f.submit %>
-<% end %>
 
   <h1>TIMELINE</h1>
   <% @timeline_tweets.each do |tweet| %>
@@ -21,7 +14,20 @@
     </div>
   <% end %>
 
+  <h1>TWEET</h1>
+  <%= form_for @user.tweets.new do |f| %>
+    <%= f.label :message %>
+    <%= f.text_field :message %>
+    <%= f.submit %>
+  <% end %>
 <% else %>
   <%= link_to 'Sign In', new_user_session_path %>
   <%= link_to 'Sign Up', new_user_registration_path  %>
+<% end %>
+
+
+<h1>SEARCH FOR USERS</h1>
+<%= form_tag(search_username_path, method: 'get') do %>
+    <%= text_field_tag(:username, params[:username]) %>
+    <%= submit_tag("Search", name: nil) %>
 <% end %>
