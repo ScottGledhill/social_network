@@ -11,4 +11,13 @@ feature 'profile page' do
       expect(page).to have_content 'Test'
     end
   end
+
+  before do
+     Tweet.create!(message:'test tweet', user_id:1)
+   end
+
+  scenario 'should display tweets from username' do
+    visit '/profiles/1'
+    expect(page).to have_content 'test tweet'
+  end
 end
