@@ -1,2 +1,5 @@
 <%= link_to 'Home', root_path%>
 <h1><%= "#{@user.username}" %></h1>
+<% @user.tweets.reverse.each do |tweet| %>
+  <div><%= tweet.message%> <%= tweet.created_at %></div>
+<% end %>
