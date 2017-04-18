@@ -12,7 +12,7 @@
 <%= f.submit %>
 <% end %>
 
-  <h1>TIMELINE</h1>
+  <h1>Timeline</h1>
   <% @timeline_tweets.each do |tweet| %>
     <div>
       <%= tweet[:content].message %> by
@@ -24,4 +24,10 @@
 <% else %>
   <%= link_to 'Sign In', new_user_session_path %>
   <%= link_to 'Sign Up', new_user_registration_path  %>
+<% end %>
+
+<h1>Search for other users</h1>
+<%= form_tag(search_username_path, method: 'get') do %>
+    <%= text_field_tag(:username, params[:username]) %>
+    <%= submit_tag("Search", name: nil) %>
 <% end %>
