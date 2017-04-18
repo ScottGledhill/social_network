@@ -1,6 +1,8 @@
 
 Welcome to the social network app!<br>
-=================<br>
+=================
+<br>
+
 This is a ruby on rails app, with postgresql!<br>
 Below is an example of the home page, here you will find a space to tweet a message out, the timeline of messages of people you follow, and a search box to find new users to follow!
 
