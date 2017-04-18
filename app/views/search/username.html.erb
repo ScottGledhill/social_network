@@ -1,0 +1,9 @@
+<h1>Search Results</h1>
+
+<% @users.each do |user| %>
+  <div>
+    <%= link_to "#{user.username}", profile_path(user.id) %>
+  </div>
+<% end %>
+
+<%= 'NO USERS FOUND. PLEASE ALTER YOUR SEARCH TERM!' if @users.blank? %>
