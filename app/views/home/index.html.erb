@@ -12,6 +12,7 @@
   <%= 'Welcome' %> <div id='name'> <%= "#{@user.username}" %>
   </div>
 </div>
+<br>
 
 
   <div class='messagebox'>
@@ -24,13 +25,15 @@
 
 <div class='timeline'>
   <h1>Timeline</h1>
+</div>
+
   <div id='tweets'>
   <% @timeline_tweets.each do |tweet| %>
       <%= tweet[:content].message %> by
       <%= link_to "#{tweet[:author].username}", profile_path(tweet[:author].id) %> at
       <%= tweet[:content].created_at %>
+      <br>
   </div>
-</div>
   <% end %>
 
 <% else %>

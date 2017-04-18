@@ -31,21 +31,27 @@ body {
 
 .new_user {
   color: pink;
-  font-size: 22px;
+  font-size: 28px;
   margin: auto;
   width: 90%;
 }
 
-.messagebox {
-  top: 10;
-  font-size: 22px;
-  float:right;
+#tweets {
+  font-size: 21px;
 }
 
 .timeline {
+  color: pink
+}
 
+.search {
+  color: pink
 }
 
 #name {
-  color :blue
+  color: #33B5FF
+}
+
+a {
+  color :green
 }
