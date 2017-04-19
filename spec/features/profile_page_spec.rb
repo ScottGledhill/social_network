@@ -1,19 +1,31 @@
 require 'rails_helper'
 
-
 feature 'profile page' do
-
   context 'username' do
-
-    user = User.create(email: "test@test.com", username: 'test', password: 111111, password_confirmation: 111111)
     scenario 'should display profile username' do
-      visit "/profiles/#{user.id}"
-      expect(page).to have_content 'tester'
+      user = create(:user)
+      visit '/users/sign_up'
+      click_button 'Sign up'
+      fill_in 'Email', with: '1@2.3.com'
+      fill_in 'Username', with: 'Test'
+      fill_in 'Password', with: '111111'
+      fill_in 'Password confirmation', with: '111111'
+      click_button 'Sign up'
+      visit profile_path(user)
+      expect(page).to have_content 'Test Name'
     end
   end
 
   scenario 'should display tweets from username' do
-    visit "/profiles/#{user.id}"
-    expect(page).to have_content 'test tweet'
+    visit '/users/sign_up'
+    click_button 'Sign up'
+    user = create(:user)
+    fill_in 'Email', with: '1@2.3.com'
+    fill_in 'Username', with: 'Test'
+    fill_in 'Password', with: '111111'
+    fill_in 'Password confirmation', with: '111111'
+    click_button 'Sign up'
+    visit profile_path(user)
+    expect(page).to have_content ''
   end
 end

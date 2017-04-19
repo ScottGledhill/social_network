@@ -14,8 +14,6 @@
   <%= link_to 'View My Profile', profile_path(@user.id) %>
 </div>
 
-
-
   <div class='messagebox'>
     <%= form_for @user.tweets.new do |f| %>
     <%= f.label :New_Tweet %>
